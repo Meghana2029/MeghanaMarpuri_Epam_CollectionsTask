@@ -1,0 +1,79 @@
+package task6;
+import java.util.*;
+public class Collections
+{
+	static ArrayList<String> al=new ArrayList<String>();
+	static void print()
+	{
+		int n=al.size();
+		for (int i=0;i<n;i++)
+		{
+			System.out.println(al.get(i));
+		}
+	}
+	static void fetch(int x)
+	{
+		System.out.println("Car is:"+al.get(x));
+	}
+	static void add(String car)
+	{
+		al.add(car);
+		System.out.println("successfully added");
+	}
+	static void remove(int n)
+	{
+		String s=al.get(n);
+		al.remove(n);
+		System.out.println("successfully removed**    "+s);
+	}
+
+	public static void main(String[] z)
+	{
+		Scanner w=new Scanner(System.in);
+		al.add("Audi");
+		al.add("Toyoto");
+		al.add("BMW");
+		al.add("Bugatti");
+		al.add("Ferrari");
+		al.add("Ford");
+		al.add("Chevrolet");
+		al.add("Hyundai");
+		al.add("Lamborghini");
+		al.add("Wolkswagen");
+		System.out.println("Initial List");
+		print();
+		while(true)
+		{
+			System.out.print("1.print\t2.fetch\t3.remove\t4.add\t5.exit\nEnter operation :");
+			int n=w.nextInt();
+			if(n==1)
+			{
+				print();
+			}
+			else if(n==2)
+			{
+				System.out.print("enter index of car:");
+				int x=w.nextInt();
+				fetch(x);
+			}
+			else if(n==3)
+			{
+				System.out.print("enter index of car:");
+				int x=w.nextInt();
+				remove(x);
+			}
+			else if(n==4)
+			{
+				System.out.print("enter car to be added :");
+				String x=w.next();
+				add(x);
+			}
+			else
+			{
+				break;
+			}
+		}
+		System.out.println("exited");
+	}
+}
+
